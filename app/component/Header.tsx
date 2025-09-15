@@ -9,7 +9,9 @@ export default function Header() {
           
           {/* Logo / Brand */}
           <div className="flex-shrink-0 text-xl font-bold">
-            MyBrand
+            <Link href="/">
+                    <span className="hover:text-gray-200 transition cursor-pointer">My Brand</span>
+                </Link>
           </div>
           
           {/* Navigation */}
