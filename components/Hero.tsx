@@ -32,7 +32,7 @@ const Hero = () => {
         </div>
 
         {/* Hero Image */}
-        <div className="w-full lg:w-1/2 mb-10 lg:mb-0 flex justify-center relative">
+        <div className="w-full lg:w-1/2 mb-10 lg:mb-0 flex justify-center relative animate-pulse">
           <img
             src="/images/ultrasound.png"
             alt="Ultrasound Edan LX3 and Rayence FPD"
