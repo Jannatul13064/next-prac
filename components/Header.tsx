@@ -1,75 +1,91 @@
-import Link from "next/link";
+"use client";
 
-// ExampleHeader.jsx
+import { useState } from "react";
+import Link from "next/link";
+import { Menu, X } from "lucide-react";
+
 export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <header className="sticky top-0 z-50 bg-white/30 backdrop-blur-md shadow-md">
+    <header className="sticky top-0 z-50 bg-white/70 backdrop-blur-md shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo / Brand */}
-          <div className="flex-shrink-0 text-xl font-bold">
-            <Link href="/">
-              <span className="hover:text-gray-200 transition cursor-pointer">
-                My Brand
-              </span>
-            </Link>
+          {/* Logo */}
+          <div className="flex-shrink-0 text-2xl font-extrabold text-indigo-600">
+            <Link href="/">My Brand</Link>
           </div>
 
-          {/* Navigation */}
-          <nav className="hidden md:flex space-x-6 font-medium">
-            <Link href="/">
-              <span className="hover:text-gray-200 transition cursor-pointer">
-                Home
-              </span>
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex items-center space-x-6 font-semibold text-gray-700">
+            <Link href="/" className="hover:text-indigo-600 transition">
+              Home
             </Link>
-            <Link href="/products">
-              <span className="hover:text-gray-200 transition cursor-pointer">
-                Products
-              </span>
+            <Link href="/products" className="hover:text-indigo-600 transition">
+              Products
             </Link>
-            <Link href="/about">
-              <span className="hover:text-gray-200 transition cursor-pointer">
-                About
-              </span>
+            <Link href="/about" className="hover:text-indigo-600 transition">
+              About
             </Link>
-            <Link href="/services">
-              <span className="hover:text-gray-200 transition cursor-pointer">
-                Services
-              </span>
+            <Link href="/services" className="hover:text-indigo-600 transition">
+              Services
             </Link>
-            <Link href="/contact">
-              <span className="hover:text-gray-200 transition cursor-pointer">
-                Contact
-              </span>
+            <Link href="/contact" className="hover:text-indigo-600 transition">
+              Contact
             </Link>
-            <Link href="/register">
-              <span className="hover:text-gray-200 transition cursor-pointer">
-                Sign In/ Sign Up
-              </span>
+            <Link
+              href="/register"
+              className="bg-indigo-600 text-white px-4 py-2 rounded-lg shadow hover:bg-indigo-700 transition"
+            >
+              Sign In / Sign Up
             </Link>
           </nav>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
-            <button className="text-white focus:outline-none">
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-gray-800 focus:outline-none"
+            >
+              {isOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </button>
           </div>
         </div>
       </div>
+
+      {/* Mobile Dropdown */}
+      {isOpen && (
+        <div className="md:hidden bg-white-20 border-t border-gray-200 shadow-md">
+          <nav className="flex flex-col space-y-4 px-6 py-4 text-gray-700 font-medium">
+            <Link href="/" onClick={() => setIsOpen(false)}>
+              Home
+            </Link>
+            <Link href="/products" onClick={() => setIsOpen(false)}>
+              Products
+            </Link>
+            <Link href="/about" onClick={() => setIsOpen(false)}>
+              About
+            </Link>
+            <Link href="/services" onClick={() => setIsOpen(false)}>
+              Services
+            </Link>
+            <Link href="/contact" onClick={() => setIsOpen(false)}>
+              Contact
+            </Link>
+            <Link
+              href="/register"
+              className="bg-indigo-600 text-white px-4 py-2 rounded-lg shadow hover:bg-indigo-700 transition text-center"
+              onClick={() => setIsOpen(false)}
+            >
+              Sign In / Sign Up
+            </Link>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }

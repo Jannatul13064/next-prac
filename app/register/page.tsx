@@ -6,8 +6,8 @@ export default function RegisterPage() {
   const [isLogin, setIsLogin] = useState(false);
 
   return (
-    <section className="flex items-center justify-center min-h-screen">
-      <div className="relative w-full max-w-md p-8 rounded-2xl shadow-2xl bg-white/90 backdrop-blur-md border border-gray-200 transform transition-all duration-500 hover:scale-105 hover:shadow-[0_10px_40px_rgba(0,0,0,0.3)]">
+    <section className="flex items-center justify-center min-h-screen ">
+      <div className="relative w-full max-w-md p-8 rounded-2xl shadow-2xl bg-white/90 backdrop-blur-md border border-gray-200 transform transition-all duration-500 hover:scale-105 hover:shadow-[0_15px_50px_rgba(0,0,0,0.4)]">
         {/* Toggle */}
         <div className="flex mb-6 bg-gray-100 rounded-xl overflow-hidden shadow-md">
           <button
@@ -32,12 +32,13 @@ export default function RegisterPage() {
           </button>
         </div>
 
-        {/* Form */}
+        {/* Sign Up Form */}
         {!isLogin ? (
           <form className="space-y-4 animate-fadeIn">
             <h2 className="text-3xl font-bold text-gray-800 text-center">
               Create Account
             </h2>
+
             <input
               type="text"
               placeholder="Full Name"
@@ -55,6 +56,18 @@ export default function RegisterPage() {
               autoComplete="new-password"
               className="w-full px-4 py-2 border border-gray-300 bg-white text-black placeholder-black rounded-lg shadow-md focus:ring-2 focus:ring-indigo-400 outline-none transition"
             />
+            <input
+              type="tel"
+              placeholder="Mobile Number"
+              autoComplete="tel"
+              className="w-full px-4 py-2 border border-gray-300 bg-white text-black placeholder-black rounded-lg shadow-md focus:ring-2 focus:ring-indigo-400 outline-none transition"
+            />
+            <input
+              type="text"
+              placeholder="Address"
+              className="w-full px-4 py-2 border border-gray-300 bg-white text-black placeholder-black rounded-lg shadow-md focus:ring-2 focus:ring-indigo-400 outline-none transition"
+            />
+
             <button
               type="submit"
               className="w-full py-2 rounded-lg bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-semibold hover:opacity-90 hover:scale-[1.02] transition-transform duration-300 shadow-lg"

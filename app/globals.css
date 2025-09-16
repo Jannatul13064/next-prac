@@ -16,9 +16,28 @@
 /* Dark mode gradient background */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: linear-gradient(135deg, #5ecbfa 0%, #e8f9ff 50%, #65da37 100%);
+    --background: linear-gradient(
+      135deg,
+      #5ecbfa 0%,
+      #e8f9ff 50%,
+      #65da37 100%
+    );
     --foreground: #240c0c;
   }
+}
+@keyframes gradient-x {
+  0%,
+  100% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+}
+
+.animate-gradient-x {
+  background-size: 200% auto;
+  animation: gradient-x 5s linear infinite;
 }
 
 body {
