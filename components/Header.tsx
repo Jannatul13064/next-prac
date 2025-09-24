@@ -79,6 +79,9 @@ export default function Header() {
             <Link href="/contact" onClick={() => setIsOpen(false)}>
               Contact
             </Link>
+            <Link href="/training" onClick={() => setIsOpen(false)}>
+              Training
+            </Link>
             <Link
               href="/register"
               className="bg-indigo-600 text-white px-4 py-2 rounded-lg shadow hover:bg-indigo-700 transition text-center"
