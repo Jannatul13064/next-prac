@@ -33,6 +33,9 @@ export default function Header() {
             <Link href="/contact" className="hover:text-indigo-600 transition">
               Contact
             </Link>
+            <Link href="/training" className="hover:text-indigo-600 transition">
+              Training
+            </Link>
             <Link
               href="/register"
               className="bg-indigo-600 text-white px-4 py-2 rounded-lg shadow hover:bg-indigo-700 transition"
@@ -75,6 +78,9 @@ export default function Header() {
             </Link>
             <Link href="/contact" onClick={() => setIsOpen(false)}>
               Contact
+            </Link>
+            <Link href="/training" onClick={() => setIsOpen(false)}>
+              Training
             </Link>
             <Link
               href="/register"

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const Hero = () => {
@@ -33,9 +34,11 @@ const Hero = () => {
 
         {/* Hero Image */}
         <div className="w-full lg:w-1/2 mb-10 lg:mb-0 flex justify-center relative animate-pulse">
-          <img
+          <Image
             src="/images/ultrasound.png"
             alt="Ultrasound Edan LX3 and Rayence FPD"
+            width={450}
+            height={300}
             className="w-80 sm:w-96 lg:w-[28rem] animate-slideIn"
           />
           {/* Optional floating effect */}

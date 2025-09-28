@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 type Product = {
   id: number;
   name: string;
@@ -11,38 +13,38 @@ const sampleProducts: Product[] = [
     id: 2,
     name: "Wireless Headphones",
     price: 80,
-    image: "/images/headphones.jpg",
+    image: "/productsImage/yellow-cap.webp",
   },
   { id: 3, name: "Gaming Mouse", price: 45, image: "/images/mouse.jpg" },
   {
     id: 4,
     name: "Mechanical Keyboard",
     price: 100,
-    image: "/images/keyboard.jpg",
+    image: "/productsImage/keyboard.jpg",
   },
   {
     id: 5,
     name: "Mechanical Keyboard",
     price: 100,
-    image: "/images/keyboard.jpg",
+    image: "/productsImage/keyboard.jpg",
   },
   {
     id: 6,
     name: "Mechanical Keyboard",
     price: 100,
-    image: "/images/keyboard.jpg",
+    image: "/productsImage/keyboard.jpg",
   },
   {
     id: 7,
     name: "Mechanical Keyboard",
     price: 100,
-    image: "/images/keyboard.jpg",
+    image: "/productsImage/keyboard.jpg",
   },
   {
     id: 8,
     name: "Mechanical Keyboard",
     price: 100,
-    image: "/images/keyboard.jpg",
+    image: "/productsImage/keyboard.jpg",
   },
 ];
 
@@ -60,9 +62,11 @@ export default function Products() {
               key={product.id}
               className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition overflow-hidden"
             >
-              <img
+              <Image
                 src={product.image}
                 alt={product.name}
+                width={400} // adjust based on your layout
+                height={200}
                 className="w-full h-48 object-cover"
               />
 
